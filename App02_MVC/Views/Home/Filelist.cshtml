@@ -1,0 +1,39 @@
+﻿@using System.IO;
+@{
+    ViewData["Title"] = "Filelist";
+    //string curdir = Directory.GetCurrentDirectory();
+    string dr = "E:\\ASPNET_Core";
+    string[] files = Directory.GetFiles(dr);
+    int i = 1;
+}
+
+<h2 class="alert alert-info">File List</h2>
+
+@*@foreach (var f in files)
+{
+    <h4 class="alert alert-info">@f</h4>
+}*@
+
+<table class="table table-responsive table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>SL No.</th>
+            <th>File Name</th>
+            <th>Extension</th>
+            <th>File Path</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var f in files)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@System.IO.Path.GetFileNameWithoutExtension(f)</td>
+                <td>@System.IO.Path.GetExtension(f)</td>
+                <td>@f</td>
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>
+
