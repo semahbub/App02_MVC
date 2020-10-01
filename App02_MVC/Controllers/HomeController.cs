@@ -9,6 +9,8 @@ using App02_MVC.Models;
 
 namespace App02_MVC.Controllers
 {
+    // Basic application tempalte for testing no code added in controller 
+    // Need to implement more controller to achive functionality 
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -24,29 +26,23 @@ namespace App02_MVC.Controllers
         }
 
         public IActionResult About()
-        {
-            //return View("Test");
-            return View("about2");
+        {            
+            return View("About");
         }
 
         public IActionResult ShowFiles()
         {
-            return View("Filelist");
+            return View("File list");
         }
 
         public IActionResult Contact()
         {
-            return View("ourpage");
-        }
-
-        public IActionResult Test()
-        {
-            return View();
+            return View("Our Page");
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            return View("Privacy");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
